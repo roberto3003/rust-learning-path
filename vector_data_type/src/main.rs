@@ -2,6 +2,18 @@ fn main() {
     let three_nums = vec![15, 3, 46];
     println!("Initial vector: {:?}", three_nums);
 
+    let first = &three_nums[0];
+    let second = three_nums.get(1);
+
+    // let does_not_exist = &three_nums[3]; // Program will panic
+    let does_not_exist = three_nums.get(3); // Program will not panic
+
+    println!(
+        "first number is {:?}, second number is {:?},
+        no existing number is {:?}",
+        first, second, does_not_exist
+    );
+
     let zeroes = vec![0; 5];
     println!("Zeroes: {:?}", zeroes);
 
