@@ -20,6 +20,8 @@ enum WebEvent {
     WEKeys(KeyPress),
 }
 
+use WebEvent::*;
+
 fn main() {
     let click = MouseClick { x: 100, y: 250 };
     println!("Mouse click location: {}, {}", click.x, click.y);
@@ -27,9 +29,12 @@ fn main() {
     let keys = KeyPress("Ctrl+".to_owned(), 'N');
     println!("\nKeys pressed: {}{}", keys.0, keys.1);
 
-    let we_load = WebEvent::WELoad(true);
-    let we_click = WebEvent::WEClick(click);
-    let we_key = WebEvent::WEKeys(keys);
+    // let we_load = WebEvent::WELoad(true);
+    // let we_click = WebEvent::WEClick(click);
+    // let we_key = WebEvent::WEKeys(keys);
+    let we_load = WELoad(true);
+    let we_click = WEClick(click);
+    let we_key = WEKeys(keys);
 
     println!(
         "\nWebEvent enum structure: \n\n {:#?} \n\n {:#?} \n\n {:#?}",
