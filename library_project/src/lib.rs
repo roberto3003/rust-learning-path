@@ -10,11 +10,15 @@ mod outermost {
     }
 }
 
+use outermost::inside;
+
 fn try_me() {
     outermost::middle_function();
     outermost::middle_secret_function();
-    outermost::inside::inner_function();
-    outermost::inside::secret_function();
+    // outermost::inside::inner_function();
+    // outermost::inside::secret_function();
+    inside::inner_function();
+    inside::secret_function();
 }
 
 #[cfg(test)]
