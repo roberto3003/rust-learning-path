@@ -26,9 +26,17 @@ fn main() {
     println!("Fruits: {:?}", fruit.pop());
     println!("Fruits: {:?}", fruit);
 
+    let first = &fruit[0];
+    println!("first fruit in the list is {:?}", first);
+    fruit.push("Pineapple");
+
     let mut index_vec = vec![15, 3, 46];
     let three = index_vec[1];
     println!("Vector: {:?}, three = {}", index_vec, three);
     index_vec[1] = index_vec[1] + 5;
     println!("Vector: {:?}", index_vec[1]);
+
+    for i in &index_vec {
+        println!("{}", i);
+    }
 }
