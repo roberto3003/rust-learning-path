@@ -24,4 +24,19 @@ mod tests {
             // assert_ne!(4, add_two(2)); Will fail because assertion is: 4 != 4;
         }
     }
+
+    pub fn greeting(name: &str) -> String {
+        // format!("Hello {}!", name)
+        String::from("Hello") // Bug introduced
+    }
+
+    #[test]
+    fn greeting_contains_name() {
+        let result = greeting("Carol");
+        assert!(
+            result.contains("Carol"),
+            "Greeting did not contain name, value was '{}'",
+            result
+        );
+    }
 }
