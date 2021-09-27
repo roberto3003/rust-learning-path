@@ -69,4 +69,12 @@ mod tests {
     fn greater_than_100() {
         Guess::new(200);
     }
+
+    pub fn add_three(a: i32) -> i32 {
+        internal_adder(a, 2)
+    }
+
+    fn internal_adder(a: i32, b: i32) -> i32 {
+        a + b
+    }
 }
