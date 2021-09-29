@@ -1,1 +1,0 @@
-/home/bobby/Dev/projects/rust/rust-learning-path/workspace/target/debug/adder: /home/bobby/Dev/projects/rust/rust-learning-path/workspace/add-one/src/lib.rs /home/bobby/Dev/projects/rust/rust-learning-path/workspace/adder/src/main.rs
