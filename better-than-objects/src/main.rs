@@ -7,48 +7,49 @@ pub struct DraftPost {
 }
 
 impl Post {
-    pub fn new () -> DraftPost {
+    pub fn new() -> DraftPost {
         DraftPost {
-       content: String::new(), 
+            content: String::new(),
+        }
     }
-}
-pub fn content(&self) -> &str {
-    &self.content
-}
+    pub fn content(&self) -> &str {
+        &self.content
+    }
 }
 
 impl DraftPost {
-   pub fn add_text(&mut self, text: &str) {
-      self.content.push_str(text);
-   } 
-   pub fn request_review(self) -> PendingReviewPost {
-       PendingReviewPost {
-           content: self.content,
-       }
-   }
+    pub fn add_text(&mut self, text: &str) {
+        self.content.push_str(text);
+    }
+    pub fn request_review(self) -> PendingReviewPost {
+        PendingReviewPost {
+            content: self.content,
+        }
+    }
 }
 
 pub struct PendingReviewPost {
-    content: String, 
+    content: String,
 }
 
 impl PendingReviewPost {
     pub fn approve(self) -> Post {
-        Post { content: self.content,
-         }
+        Post {
+            content: self.content,
+        }
     }
 }
 
 extern crate blog;
 use blog::Post;
 fn main() {
-   let mut post = Post::new();
-   
-   post.add_text("I ate a salad for lunc today");
+    let mut post = Post::new();
 
-   let post = post.request_review();
+    post.add_text("I ate a salad for lunc today");
 
-   let post = post.approve();
+    let post = post.request_review();
 
-   assert_eq!("I ate a salad for lunch today", post.content());
+    let post = post.approve();
+
+    assert_eq!("I ate a salad for lunch today", post.content());
 }
